@@ -1,19 +1,19 @@
 "use client";
 
-// import { PiCareLeftBold, PiCareRightBold } from "react-icons/pi";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { useSwiper } from "swiper/react";
 
-const WorkSliderBtns = ({ containerStyles, btnStyles, iconsStyles }) => {
+const WorkSliderBtns = ({ containerStyles, btnStyles }) => {
   const swiper = useSwiper();
+  
   return (
     <div className={containerStyles}>
       <button className={btnStyles} onClick={() => swiper.slidePrev()}>
-        <BsArrowUpRight className={iconsStyles} />
+        <IoIosArrowBack />
       </button>
 
       <button className={btnStyles} onClick={() => swiper.slideNext()}>
-        <BsGithub className={iconsStyles} />
+        <IoIosArrowForward />
       </button>
     </div>
   );

@@ -102,6 +102,7 @@ const Work = () => {
 
               {/* buttons */}
               <div className="flex items-center gap-4">
+                
                 {/* live project button */}
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
@@ -149,7 +150,7 @@ const Work = () => {
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
                       {/* image */}
-                      <div className="relative w-full h-full">
+                      <div className="relative w-full h-full overflow-hidden">
                         <Image
                           src={project.image}
                           alt="project"
@@ -162,9 +163,10 @@ const Work = () => {
               })}
 
               {/* slider buttons */}
+
               <WorkSliderBtns
-                className="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] flex justify-center items-center transition-all"
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-3xl py-1 w-[44px] flex justify-center items-center transition-all"
               />
             </Swiper>
           </div>
