@@ -3,23 +3,26 @@ import Socials from "@/components/Socials";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+import Resume from "./resume/page";
+import Services from "./services/page";
+import Work from "./work/page";
 
 const Home = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+        {/* HERO */}
+        <div className="flex flex-col xl:flex-row items-center justify-between mt-12 xl:mt-12 xl:pb-12">
 
           {/* TEXT */}
           <div className="text-center xl:text-left">
-            <span className="text-xl">Frontend Developer</span>
-            <h1 className="h1 mb-6">
-              Hello I'm <br />{" "}
-              <span className="text-accent">Manasseh Walshak</span>
-            </h1>
+            <div className="mb-6">
+              <span className="text-2xl">Hello I'm</span>
+              <h1 className="h1 text-accent">Manasseh Walshak</h1>
+            </div>
             <p className="max-w-[500px] mb-9 text-white/80">
-              I excel at crafting elegant digital experiences and i am
-              procificient in various programming languages and technologies.
+            A passionate skilled Front-end Developer and Creative Graphic
+            Designer. With procificiency in various web technologies and Design tools.
             </p>
 
             {/* BUTTON AND SOCIALS */}
@@ -53,6 +56,15 @@ const Home = () => {
       
       {/* STATS */}
       <Stats/>
+
+      {/* Resume */}
+      <Resume/>
+
+      {/* Services */}
+      <Services/>
+
+      {/* Work */}
+      <Work/>
     </section>
   );
 };
