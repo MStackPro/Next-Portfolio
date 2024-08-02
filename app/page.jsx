@@ -7,14 +7,14 @@ import Resume from "./resume/page";
 import Services from "./services/page";
 import Work from "./work/page";
 import Contact from "./contact/page";
+// import Cv from "../app/assets/WalshakManassehCV.docx"
 
 const Home = () => {
   return (
-    <section className="h-full">
+    <section className="h-full mt-32">
       <div className="container mx-auto h-full">
         {/* HERO */}
         <div className="flex flex-col xl:flex-row items-center justify-between mt-12 xl:mt-12 xl:pb-12">
-
           {/* TEXT */}
           <div className="text-center xl:text-left">
             <div className="mb-6">
@@ -22,20 +22,20 @@ const Home = () => {
               <h1 className="h1 text-accent">Manasseh Walshak</h1>
             </div>
             <p className="max-w-[500px] mb-9 text-white/80">
-            A passionate skilled Front-end Developer and Creative Graphic
-            Designer.
+              A passionate skilled Front-end Developer and Creative Graphic
+              Designer.
             </p>
 
             {/* BUTTON AND SOCIALS */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-              >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="uppercase flex items-center gap-2"
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </Button>
 
               <div className="mb-8 xl:mb-0">
                 <Socials
@@ -50,25 +50,25 @@ const Home = () => {
 
           {/* PHOTO */}
           <div>
-            <Photo/>
+            <Photo />
           </div>
         </div>
       </div>
-      
+
       {/* STATS */}
-      <Stats/>
+      <Stats />
 
       {/* Resume */}
-      <Resume/>
+      <Resume />
 
       {/* Services */}
-      <Services/>
+      <Services />
 
       {/* Work */}
-      <Work/>
+      <Work />
 
       {/* Contact */}
-      <Contact/>
+      <Contact />
     </section>
   );
 };
