@@ -30,8 +30,8 @@ const Contact = () => {
         <div className="flex flex-col xl:flex-row gap-12 xl:gap-20">
           {/* socials */}
           <article className="flex flex-col items-center w-full xl:w-2/5 space-y-6 mx-auto xl:mx-0">
-            <h2 className="text-3xl text-accent">Let's Talk</h2>
-            <p className="text-center text-sm">
+            <h2 className="text-3xl text-accent font-semibold">Let's Talk</h2>
+            <p className="text-center text-sm text-white/60">
               Have a question or want to hire me? I'm here to help. Feel free to
               reach out via social media handles or directly via email. Thank
               you!

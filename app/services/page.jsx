@@ -21,7 +21,7 @@ const services = [
 ];
 const Services = () => {
   return (
-    <section className="min-h[80vh] flex flex-col justify-center py-12 xl:py-0 xl:mt-24 mt-16" id="services">
+    <section className="min-h[80vh] flex flex-col justify-center py-12 xl:py-0 xl:mt-24 mt-12" id="services">
       <div className="container mx-auto">
         <p className="text-accent text-[17px] font-semibold mb-8">
           My Services

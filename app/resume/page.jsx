@@ -140,10 +140,10 @@ const Resume = () => {
         opacity: 1,
         transition: { delay: 1, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h[80vh] flex items-center justify-center py-12 xl:p-0 xl:mt-32 mt-20"
+      className="min-h[80vh] flex items-center justify-center py-12 xl:p-0 xl:mt-32 mt-20 bg-[#19181f]"
       id="resume"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto pt-12">
         <p className="text-accent text-[17px] font-semibold"> My Resume</p>
         <Tabs
           defaultValue="about"
@@ -255,7 +255,7 @@ const Resume = () => {
             <TabsContent value="about" className="w-full text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-[14px] text-white/60 mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-[14px] text-white mx-auto xl:mx-0">
                   {about.desc}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-3 max-w-[620px]">
