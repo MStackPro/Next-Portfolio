@@ -22,3 +22,19 @@
         -webkit-text-stroke: 1px #00ff99;
     }
 }
+
+.scroll-top.visible {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scroll-top:hover {
+    transform: scale(0.9);
+    box-shadow: 0 4px 12px var(--text-color);
+  }
+  
+  img.scroll-top {
+    width: 2rem;
+    height: 2rem;
+  }

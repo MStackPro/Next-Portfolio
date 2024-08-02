@@ -52,7 +52,7 @@ const Services = () => {
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-white/60 text-sm">{service.desc}</p>
+                <p className="text-white/60 text-sm leading-6">{service.desc}</p>
               </div>
             );
           })}
