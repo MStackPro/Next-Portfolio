@@ -138,9 +138,9 @@ const Resume = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { duration: 0.4, ease: "easeIn" },
+        transition: { delay: 1, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h[80vh] flex items-center justify-center py-12 xl:p-0 xl:mt-28"
+      className="min-h[80vh] flex items-center justify-center py-12 xl:p-0 xl:mt-32 mt-20"
       id="resume"
     >
       <div className="container mx-auto">
@@ -223,7 +223,7 @@ const Resume = () => {
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-left xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="max-w-[600px] text-white/60 xl:mx-0">
+                  <p className="max-w-[600px] text-white/60 xl:mx-0 text-sm">
                     {skills.desc}
                   </p>
                 </div>
@@ -255,7 +255,7 @@ const Resume = () => {
             <TabsContent value="about" className="w-full text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-white mx-auto xl:mx-0">
+                <p className="max-w-[600px] text-[14px] text-white/60 mx-auto xl:mx-0">
                   {about.desc}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-3 max-w-[620px]">
@@ -268,7 +268,7 @@ const Resume = () => {
                         <span className="text-white/60 text-sm">
                           {item.fieldName}
                         </span>
-                        <span>{item.fieldValue}</span>
+                        <span className="text-sm">{item.fieldValue}</span>
                       </li>
                     );
                   })}

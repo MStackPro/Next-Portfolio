@@ -6,6 +6,7 @@ import { FiDownload } from "react-icons/fi";
 import Resume from "./resume/page";
 import Services from "./services/page";
 import Work from "./work/page";
+import Contact from "./contact/page";
 
 const Home = () => {
   return (
@@ -22,7 +23,7 @@ const Home = () => {
             </div>
             <p className="max-w-[500px] mb-9 text-white/80">
             A passionate skilled Front-end Developer and Creative Graphic
-            Designer. With procificiency in various web technologies and Design tools.
+            Designer.
             </p>
 
             {/* BUTTON AND SOCIALS */}
@@ -65,6 +66,9 @@ const Home = () => {
 
       {/* Work */}
       <Work/>
+
+      {/* Contact */}
+      <Contact/>
     </section>
   );
 };

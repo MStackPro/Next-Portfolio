@@ -30,7 +30,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { duration: 0.4, ease: "easeIn" },
+            transition: { delay: 1, duration: 0.4, ease: "easeIn" },
           }}
           className="grid grid-cols-1 md:grid-cols-2 gap-[30px]"
         >
@@ -52,7 +52,7 @@ const Services = () => {
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-white/60">{service.desc}</p>
+                <p className="text-white/60 text-sm">{service.desc}</p>
               </div>
             );
           })}
