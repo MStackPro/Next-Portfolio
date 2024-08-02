@@ -7,8 +7,10 @@ import ScrollUp from "@/components/ScrollUp";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
-  weight: ["300", "400", "500","700",],
+  weight: ["400", "500", "700"],
+  variable: "--font-Ubuntu_Mono"
 });
+
 
 export const metadata = {
   title: "Manasseh Walshak Yakubu",
