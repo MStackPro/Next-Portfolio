@@ -14,37 +14,107 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import { FaBehance } from "react-icons/fa6";
 
 const projects = [
   {
     num: "01",
     category: "frontend",
     title: " project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur?",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: require("/app/assets/NFT.png"),
-    live: "#",
-    github: "#",
+    desc: "Zenith Agro allied corperative society",
+    stack: [{ name: "React" }],
+    image: require("/app/assets/Zenith.png"),
+    live: "https://zenith-agro.vercel.app/",
+    github: "https://github.com/MStackPro/Zenith-Agro",
+    behance: "https://www.behance.net/walshakmanasseh",
   },
   {
     num: "02",
     category: "frontend",
     title: " project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur?",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: require("/app/assets/NFT.png"),
-    live: "#",
+    desc: "Manage",
+    stack: [{ name: "React" }, { name: "Tailwind css" }],
+    image: require("/app/assets/manage.jpg"),
+    live: "https://manage-landing-page-gilt-five.vercel.app/",
     github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
   },
   {
     num: "03",
-    category: "frontend",
+    category: "Branding",
     title: " project",
-    desc: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, consequuntur?",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: require("/app/assets/NFT.png"),
+    desc: "Mstack Solutions",
+    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    image: require("/app/assets/mix-designs.png"),
     live: "#",
     github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "04",
+    category: "frontend",
+    title: " project",
+    desc: "Kekepay a tricycle revenue payment app",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
+    image: require("/app/assets/kekepay.png"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "05",
+    category: "Branding",
+    title: " project",
+    desc: "Brand identity designs for KVE Africa",
+    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    image: require("/app/assets/kve21.PNG"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "06",
+    category: "Branding",
+    title: " project",
+    desc: "Kay's Thrift and beauty stores",
+    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    image: require("/app/assets/k8.PNG"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "07",
+    category: "frontend",
+    title: " project",
+    desc: "Noko social media",
+    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
+    image: require("/app/assets/noko.png"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "08",
+    category: "Frontend",
+    title: " project",
+    desc: "Mstack Solutions",
+    stack: [{ name: "Figma" }, { name: "Adobe Illustrator" },{name: "Next.js"}, {name: "Tailwind css"}, {name: "Material ui"},],
+    image: require("/app/assets/Landing-page.png"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
+  },
+  {
+    num: "09",
+    category: "Web Design",
+    title: " project",
+    desc: "Sorix Energy",
+    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    image: require("/app/assets/sorix-website.png"),
+    live: "#",
+    github: "#",
+    behance: "https://www.behance.net/walshakmanasseh",
   },
 ];
 
@@ -132,6 +202,21 @@ const Work = () => {
 
                       <TooltipContent>
                         <p>Github repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+
+                {/* behance project button */}
+                <Link href={project.behance}>
+                  <TooltipProvider delayDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[45px] h-[45px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <FaBehance className="text-white text-2xl group-hover:text-accent" />
+                      </TooltipTrigger>
+
+                      <TooltipContent>
+                        <p>Behance projects</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>

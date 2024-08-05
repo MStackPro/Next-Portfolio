@@ -15,6 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 
+
 const Contact = () => {
   return (
     <motion.section
@@ -56,9 +57,9 @@ const Contact = () => {
               {/* input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input type="text" placeholder="Firstname" />
-                <Input type="text" placeholder="Lastname" />
-                <Input type="email" placeholder="Email Address" />
-                <Input type="tel" placeholder="Phone number" />
+                <Input type="text" placeholder="Lastname"  />
+                <Input type="email" placeholder="Email Address"  />
+                <Input type="tel" placeholder="Phone number"  />
               </div>
 
               {/* select */}
@@ -73,6 +74,7 @@ const Contact = () => {
                     <SelectItem value="est">Web Development</SelectItem>
                     <SelectItem value="cst">Graphic Design</SelectItem>
                     <SelectItem value="mst">Branding</SelectItem>
+                    <SelectItem value="otr">Other</SelectItem>
                   </SelectGroup>
                 </SelectContent>
               </Select>
@@ -80,7 +82,7 @@ const Contact = () => {
               {/* textarea */}
               <Textarea
                 className="h-[200px]"
-                placeholder="Type your message here."
+                placeholder="Type your message here." 
               />
 
               {/* btn */}
