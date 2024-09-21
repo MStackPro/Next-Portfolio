@@ -1,17 +1,15 @@
 "use client"
 
+import React from 'react'
+import ScrollToTop from 'react-scroll-to-top'
+import { IoIosArrowUp } from "react-icons/io";
 
-import { IoArrowUp } from "react-icons/io5";
-import ScrollToTop from 'scroll-to-top-react';
 
-
-const ScrollUp = () => {
+export default function ScrollUp() {
   return (
-    <section>
-      <ScrollToTop component={<IoArrowUp/>}/>
-    </section>
+    <main className='bg-red-500'>
+          <ScrollToTop className='flex justify-center items-center' style={{backgroundColor: "#292827", border: "1px solid #fff", width: "2.5rem", height: "2.5rem", }} smooth component={<IoIosArrowUp className='text-accent text-3xl' />}/>
 
-  );
-};
-
-export default ScrollUp;
+    </main>
+  )
+}
