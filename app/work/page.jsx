@@ -33,7 +33,7 @@ const projects = [
     category: "frontend",
     title: " project",
     desc: "Manage",
-    stack: [{ name: "React" }, { name: "Tailwind css" }],
+    stack: [{ name: "React" }, { name: "Tailwind" }],
     image: require("/app/assets/manage.jpg"),
     live: "https://manage-landing-page-gilt-five.vercel.app/",
     github: "#",
@@ -44,7 +44,7 @@ const projects = [
     category: "Branding",
     title: " project",
     desc: "Mstack Solutions",
-    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/mix-designs.png"),
     live: "#",
     github: "#",
@@ -66,7 +66,7 @@ const projects = [
     category: "Branding",
     title: " project",
     desc: "Brand identity designs for KVE Africa",
-    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/kve21.PNG"),
     live: "#",
     github: "#",
@@ -77,7 +77,7 @@ const projects = [
     category: "Branding",
     title: " project",
     desc: "Kay's Thrift and beauty stores",
-    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/k8.PNG"),
     live: "#",
     github: "#",
@@ -99,7 +99,7 @@ const projects = [
     category: "Frontend",
     title: " project",
     desc: "Mstack Solutions",
-    stack: [{ name: "Figma" }, { name: "Adobe Illustrator" },{name: "Next.js"}, {name: "Tailwind css"}, {name: "Material ui"},],
+    stack: [{ name: "Figma" }, { name: "Illustrator" },{name: "Next.js"}, {name: "Tailwind"}, {name: "Material ui"},],
     image: require("/app/assets/Landing-page.png"),
     live: "#",
     github: "#",
@@ -110,7 +110,7 @@ const projects = [
     category: "Web Design",
     title: " project",
     desc: "Sorix Energy",
-    stack: [{ name: "Adobe Photoshop" }, { name: "Adobe Illustrator" }],
+    stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/sorix-website.png"),
     live: "#",
     github: "#",
@@ -142,9 +142,9 @@ const Work = () => {
       <p className="text-accent text-[17px] font-semibold mb-8">
           My Works
         </p>
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
+        <div className="flex flex-col xl:flex-row xl:gap-[30]">
+          <div className="w-full xl:w-[50%] h-fit flex flex-col xl:justify-between order-2 xl:order-none">
+            <div className="flex flex-col gap-[20px] h-[50%]">
               {/* outline num */}
               <div className=" text-4xl xl:text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
@@ -170,58 +170,6 @@ const Work = () => {
                   );
                 })}
               </ul>
-
-              {/* border */}
-              <div className="border border-white/20"></div>
-
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                
-                {/* live project button */}
-                <Link href={project.live}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[45px] h-[45px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
-                      </TooltipTrigger>
-
-                      <TooltipContent>
-                        <p>Live project</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-
-                {/* github project button */}
-                <Link href={project.github}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[45px] h-[45px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-2xl group-hover:text-accent" />
-                      </TooltipTrigger>
-
-                      <TooltipContent>
-                        <p>Github repository</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-
-                {/* behance project button */}
-                <Link href={project.behance}>
-                  <TooltipProvider delayDuration={100}>
-                    <Tooltip>
-                      <TooltipTrigger className="w-[45px] h-[45px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <FaBehance className="text-white text-2xl group-hover:text-accent" />
-                      </TooltipTrigger>
-
-                      <TooltipContent>
-                        <p>Behance projects</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </Link>
-              </div>
             </div>
           </div>
           
@@ -229,35 +177,33 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              className="xl:h-fit w-[95%] xl:w-[80%] flex flex-col items-center"
               onSlideChange={handleSlideChange}
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[380px] xl:h-[460px] relative group flex justify-center items-center rounded-xl overflow-hidden">
+                  <SwiperSlide key={index} className="">
+                    <div className="h-[300px] w-full xl:h-[350px] relative group flex justify-center items-center rounded-lg overflow-hidden">
                       {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                      {/* <div className="absolute top-0 bottom-0 w-fit h-full bg-green-500 z-10"></div> */}
 
                       {/* image */}
                       <div className="relative w-full h-full">
                         <Image
                           src={project.image}
                           alt="project"
-                          className="object-cover transform hover:translate-y-20"
+                          className="object-cover"
                         />
                       </div>
                     </div>
                   </SwiperSlide>
                 );
               })}
-
               {/* slider buttons */}
-
               <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-3xl py-1 w-[44px] flex justify-center items-center transition-all"
+                containerStyles="flex gap-4 justify-center mt-4"
               />
+              
             </Swiper>
           </div>
         </div>

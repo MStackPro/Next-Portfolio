@@ -26,23 +26,18 @@ const Services = () => {
         <p className="text-accent text-[17px] font-semibold mb-8">
           My Services
         </p>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 1, duration: 0.4, ease: "easeIn" },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[30px]"
+        <section
+          className="grid grid-cols-1 md:grid-cols-3 gap-[30px]"
         >
           {/* Service container */}
           {services.map((service, index) => {
             return (
               <div
                 key={index}
-                className="flex-1 flex-col justify-center gap-6 group space-y-4 bg-[#232329] p-6 rounded-xl"
+                className="flex-1 flex-col justify-center gap-6 group space-y-4 bg-[#323237] p-6 rounded-xl"
               >
                 {/* NUM */}
-                <div className="text-5xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
+                <div className="xl:text-5xl text-4xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">
                   {service.num}
                 </div>
 
@@ -56,7 +51,7 @@ const Services = () => {
               </div>
             );
           })}
-        </motion.div>
+        </section>
       </div>
     </section>
   );

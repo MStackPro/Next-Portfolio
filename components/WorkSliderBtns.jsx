@@ -2,19 +2,20 @@
 
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { useSwiper } from "swiper/react";
+import { Button } from "./ui/button";
 
-const WorkSliderBtns = ({ containerStyles, btnStyles }) => {
+const WorkSliderBtns = ({ containerStyles }) => {
   const swiper = useSwiper();
   
   return (
     <div className={containerStyles}>
-      <button className={btnStyles} onClick={() => swiper.slidePrev()}>
+      <Button size="sm" onClick={() => swiper.slidePrev()}>
         <IoIosArrowBack />
-      </button>
+      </Button>
 
-      <button className={btnStyles} onClick={() => swiper.slideNext()}>
+      <Button size="sm" onClick={() => swiper.slideNext()}>
         <IoIosArrowForward />
-      </button>
+      </Button>
     </div>
   );
 };

@@ -22,9 +22,9 @@ const Stats = () => {
                   end={item.num}
                   duration={5}
                   delay={2}
-                  className="text-3xl xl:text-5xl font-extrabold"
+                  className="text-3xl xl:text-4xl font-extrabold"
                 />
-                <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white/80` }>{item.text}</p>
+                <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white text-sm` }>{item.text}</p>
               </div>
             );
           })}

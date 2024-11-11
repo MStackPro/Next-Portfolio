@@ -18,10 +18,10 @@ const Home = () => {
           {/* TEXT */}
           <div className="text-center xl:text-left">
             <div className="mb-6">
-              <span className="text-2xl">Hello I'm</span>
-              <h1 className="h1 text-accent">Manasseh Walshak</h1>
+              <span className="">Hello I'm</span>
+              <h1 className="h2 text-accent">Manasseh Walshak</h1>
             </div>
-            <p className="max-w-[500px] mb-9 text-white/80">
+            <p className="max-w-[500px] mb-9 text-white text-sm">
               A passionate skilled Front-end Developer and Creative Graphic
               Designer.
             </p>
@@ -30,8 +30,8 @@ const Home = () => {
             <div className="flex flex-col xl:flex-row items-center gap-8">
                 <Button
                   variant="outline"
-                  size="lg"
-                  className="uppercase flex items-center gap-2"
+                  size="md"
+                  className="uppercase text-sm flex items-center gap-2"
                 >
                   <span>Download CV</span>
                   <FiDownload className="text-xl" />

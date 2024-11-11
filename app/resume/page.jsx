@@ -134,12 +134,7 @@ const skills = {
 
 const Resume = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{
-        opacity: 1,
-        transition: { delay: 1, duration: 0.4, ease: "easeIn" },
-      }}
+    <section
       className="min-h[80vh] flex items-center justify-center py-12 xl:p-0 xl:mt-32 mt-20 bg-[#19181f]"
       id="resume"
     >
@@ -149,7 +144,7 @@ const Resume = () => {
           defaultValue="about"
           className="flex flex-col xl:flex-row gap-[60px] mt-6"
         >
-          <TabsList className="flex flex-col w-full max-w-[380px] mx-0 gap-6">
+          <TabsList className="flex flex-col w-full max-w-[380px] mx-0 gap-4">
             <TabsTrigger value="about">About me</TabsTrigger>
             <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="experience">Experience</TabsTrigger>
@@ -158,10 +153,11 @@ const Resume = () => {
 
           {/* CONTENT */}
           <div className="min-h-[70vh] w-full">
+            
             {/* experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-left">
-                <h3 className="text-4xl font-bold">{experience.title}</h3>
+                <h3 className="text-3xl font-bold">{experience.title}</h3>
 
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -178,7 +174,7 @@ const Resume = () => {
                           <div className="flex items-center gap-3">
                             {/* dot */}
                             <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
-                            <p className="text-white/60 text-sm uppercase">{item.company}</p>
+                            <p className="text-white/60 text-sm leading-5 uppercase">{item.company}</p>
                           </div>
                         </li>
                       );
@@ -191,7 +187,7 @@ const Resume = () => {
             {/* education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-left">
-                <h3 className="text-4xl font-bold">{education.title}</h3>
+                <h3 className="text-3xl font-bold">{education.title}</h3>
 
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -222,7 +218,7 @@ const Resume = () => {
             <TabsContent value="skills">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-left xl:text-left">
-                  <h3 className="text-4xl font-bold">{skills.title}</h3>
+                  <h3 className="text-3xl font-bold">{skills.title}</h3>
                   <p className="max-w-[600px] text-white/60 xl:mx-0 text-sm">
                     {skills.desc}
                   </p>
@@ -254,7 +250,7 @@ const Resume = () => {
             {/* about */}
             <TabsContent value="about" className="w-full text-left">
               <div className="flex flex-col gap-[30px]">
-                <h3 className="text-4xl font-bold">{about.title}</h3>
+                <h3 className="text-3xl font-bold">{about.title}</h3>
                 <p className="max-w-[600px] text-[14px] text-white mx-auto xl:mx-0">
                   {about.desc}
                 </p>
@@ -278,7 +274,7 @@ const Resume = () => {
           </div>
         </Tabs>
       </div>
-    </motion.div>
+    </section>
   );
 };
 
