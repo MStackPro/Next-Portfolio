@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
 import { Button } from "@/components/ui/button";
+import { fadeIn } from "@/components/motions/variants";
 
 const projects = [
   {
@@ -133,7 +134,13 @@ const Work = () => {
         <p className="text-accent text-[17px] font-semibold mb-8">My Works</p>
         <div className="flex flex-col xl:flex-row xl:gap-[30]">
           <div className="w-full xl:w-[50%] h-fit flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[20px] h-[50%]">
+            <motion.div
+              variants={fadeIn("right", 0.1)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{ once: false, amount: 0.7 }}
+              className="flex flex-col gap-[20px] h-[50%]"
+            >
               {/* outline num */}
               <div className=" text-4xl xl:text-5xl leading-none font-extrabold text-transparent text-outline">
                 {project.num}
@@ -159,7 +166,7 @@ const Work = () => {
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           </div>
 
           <div className="w-full xl:w-[50%]">

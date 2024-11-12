@@ -1,5 +1,6 @@
 "use client";
 
+import { fadeIn } from "@/components/motions/variants";
 import { motion } from "framer-motion";
 
 const services = [
@@ -19,14 +20,22 @@ const services = [
     desc: "I design comprehensive branding solutions that encompass everything from logos and color schemes to typography and brand guidelines. With meticulous attention to detail and a passion for storytelling.",
   },
 ];
+
 const Services = () => {
   return (
-    <section className="min-h[80vh] flex flex-col justify-center py-12 xl:py-0 xl:mt-24 mt-12" id="services">
+    <section
+      className="min-h[80vh] flex flex-col justify-center py-12 xl:py-0 xl:mt-24 mt-12"
+      id="services"
+    >
       <div className="container mx-auto">
         <p className="text-accent text-[17px] font-semibold mb-8">
           My Services
         </p>
-        <section
+        <motion.div
+          variants={fadeIn("up", 0.1)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.7 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-[30px]"
         >
           {/* Service container */}
@@ -47,11 +56,13 @@ const Services = () => {
                 </h2>
 
                 {/* DESCRIPTION */}
-                <p className="text-white/60 text-sm leading-6">{service.desc}</p>
+                <p className="text-white/60 text-sm leading-6">
+                  {service.desc}
+                </p>
               </div>
             );
           })}
-        </section>
+        </motion.div>
       </div>
     </section>
   );

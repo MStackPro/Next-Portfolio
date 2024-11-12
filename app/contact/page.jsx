@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import toast, { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
+import { fadeIn } from "@/components/motions/variants";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -57,45 +58,44 @@ const Contact = () => {
     }));
   };
 
- // Form submission handler
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  // Form submission handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // Create FormData and append each field
-  const form = new FormData();
-  form.append("firstname", formData.firstname);
-  form.append("lastname", formData.lastname);
-  form.append("email", formData.email);
-  form.append("phone", formData.phone);
-  form.append("service", formData.service);
-  form.append("message", formData.message);
+    // Create FormData and append each field
+    const form = new FormData();
+    form.append("firstname", formData.firstname);
+    form.append("lastname", formData.lastname);
+    form.append("email", formData.email);
+    form.append("phone", formData.phone);
+    form.append("service", formData.service);
+    form.append("message", formData.message);
 
-  try {
-    const response = await fetch("https://formspree.io/f/xvojedzq", {
-      method: "POST",
-      body: form, // Use FormData instead of JSON
-      headers: { Accept: "application/json" },
-    });
-
-    if (response.ok) {
-      toast.success("Message sent successfully!");
-      // Reset form fields after successful submission
-      setFormData({
-        firstname: "",
-        lastname: "",
-        email: "",
-        phone: "",
-        service: "",
-        message: "",
+    try {
+      const response = await fetch("https://formspree.io/f/xvojedzq", {
+        method: "POST",
+        body: form, // Use FormData instead of JSON
+        headers: { Accept: "application/json" },
       });
-    } else {
-      throw new Error("Failed to send message");
-    }
-  } catch (error) {
-    toast.error("Failed to send message");
-  }
-};
 
+      if (response.ok) {
+        toast.success("Message sent successfully!");
+        // Reset form fields after successful submission
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      toast.error("Failed to send message");
+    }
+  };
 
   return (
     <section className="py-6 mt-20 xl:mt-28" id="contact">
@@ -103,7 +103,13 @@ const handleSubmit = async (e) => {
       <div className="container mx-auto">
         <div className="flex flex-col justify-center items-center gap-8">
           {/* socials */}
-          <article className="flex flex-col items-center w-full xl:w-2/5 space-y-6 mx-auto xl:mx-0">
+          <motion.article
+            variants={fadeIn("up", 0.1)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="flex flex-col items-center w-full xl:w-2/5 space-y-6 mx-auto xl:mx-0"
+          >
             <h2 className="text-3xl text-accent font-semibold">Let's Talk</h2>
             <p className="text-center text-sm text-white">
               Have a question or want to hire me? I'm here to help. Feel free to
@@ -118,7 +124,7 @@ const handleSubmit = async (e) => {
                 }
               />
             </div>
-          </article>
+          </motion.article>
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
@@ -185,8 +191,12 @@ const handleSubmit = async (e) => {
                       <SelectContent>
                         <SelectGroup>
                           <SelectLabel>Select a service</SelectLabel>
-                          <SelectItem value="Web Development">Web Development</SelectItem>
-                          <SelectItem value="Graphic Design">Graphic Design</SelectItem>
+                          <SelectItem value="Web Development">
+                            Web Development
+                          </SelectItem>
+                          <SelectItem value="Graphic Design">
+                            Graphic Design
+                          </SelectItem>
                           <SelectItem value="Branding">Branding</SelectItem>
                           <SelectItem value="Other">Other</SelectItem>
                         </SelectGroup>
@@ -206,7 +216,10 @@ const handleSubmit = async (e) => {
                       <AlertDialogCancel className="hover:border-red-500 hover:text-red-500 hover:bg-transparent border-red-white/60 text-white">
                         Cancel
                       </AlertDialogCancel>
-                      <AlertDialogAction type="submit" disabled={isButtonDisabled}>
+                      <AlertDialogAction
+                        type="submit"
+                        disabled={isButtonDisabled}
+                      >
                         Send
                       </AlertDialogAction>
                     </AlertDialogFooter>

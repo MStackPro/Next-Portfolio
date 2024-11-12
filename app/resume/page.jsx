@@ -18,6 +18,7 @@ import {
   FaFigma,
   FaNodeJs,
 } from "react-icons/fa";
+import { fadeIn } from "@/components/motions/variants";
 
 // About data
 const about = {
@@ -152,7 +153,10 @@ const Resume = () => {
           </TabsList>
 
           {/* CONTENT */}
-          <div className="min-h-[70vh] w-full">
+          <motion.div variants={fadeIn("up", 0.1)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{once: false, amount: 0.7}} className="min-h-[70vh] w-full">
             
             {/* experience */}
             <TabsContent value="experience" className="w-full">
@@ -271,7 +275,7 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-          </div>
+          </motion.div>
         </Tabs>
       </div>
     </section>

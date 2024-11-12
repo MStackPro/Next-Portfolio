@@ -1,6 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
 import CountUp from "react-countup";
+import { fadeIn } from "./motions/variants";
 
 
 const stats = [
@@ -17,7 +19,10 @@ const Stats = () => {
         <div className="grid grid-cols-2 xl:grid-cols-4 gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((item, index) => {
             return (
-              <div className="flex-1 flex gap-4 items-center justify-center" key={index}>
+              <motion.div variants={fadeIn("up", 0.1)}
+              initial="hidden"
+              whileInView={"show"}
+              viewport={{once: false, amount: 0.7}} className="flex-1 flex gap-4 items-center justify-center" key={index}>
                 <CountUp
                   end={item.num}
                   duration={5}
@@ -25,7 +30,7 @@ const Stats = () => {
                   className="text-3xl xl:text-4xl font-extrabold"
                 />
                 <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white text-sm` }>{item.text}</p>
-              </div>
+              </motion.div>
             );
           })}
         </div>
