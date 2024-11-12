@@ -1,4 +1,5 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import Navbar from "./Navbar";
@@ -7,8 +8,22 @@ import Image from "next/image";
 import Logo from "../app/assets/logo.jpg";
 
 const Header = () => {
+  const [navbarBg, setnavbarBg] = useState(false);
+
+  const navbarBgChange = () => {
+    if (window.scrollY >= 80) {
+      setnavbarBg(true);
+    } else {
+      setnavbarBg(false);
+    }
+  };
+
+  useEffect(() => {
+    navbarBgChange();
+    window.addEventListener("scroll", navbarBgChange);
+  });
   return (
-    <header className="py-4 text-white shadow-md h-20 fixed z-20 w-screen top-0 bg-primary">
+    <header className={`${navbarBg ? "bg-primary bg-opacity-95 shadow-m transition-all duration-500 ease-in-out" : "bg-transparent"} py-4 text-white h-20 fixed z-20 w-screen top-0`}>
       <div className="container mx-auto flex justify-between items-center">
         {/* ==== NAV LOGO ==== */}
         <div className="overflow-hidden rounded-full">

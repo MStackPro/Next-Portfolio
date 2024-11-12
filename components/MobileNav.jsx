@@ -71,7 +71,7 @@ export default function MobileNav() {
   return (
     <section>
       <IconButton edge="end" aria-label="menu" onClick={toggleDrawer(true)}>
-        <CiMenuBurger className="text-accent text-3xl" />
+        <CiMenuBurger className="text-accent text-3xl mr-3" />
       </IconButton>
 
       <SwipeableDrawer
