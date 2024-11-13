@@ -72,8 +72,6 @@ const projects = [
     title: " project",
     desc: "Mstack Solutions",
     stack: [
-      { name: "Figma" },
-      { name: "Illustrator" },
       { name: "Next.js" },
       { name: "Tailwind" },
       { name: "Material ui" },
