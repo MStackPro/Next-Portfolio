@@ -29,7 +29,7 @@ const Stats = () => {
                   delay={2}
                   className="text-3xl xl:text-4xl font-extrabold"
                 />
-                <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white text-sm` }>{item.text}</p>
+                <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-sm` }>{item.text}</p>
               </motion.div>
             );
           })}

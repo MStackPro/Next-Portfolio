@@ -9,6 +9,7 @@ import { Box } from "@mui/material";
 import { List } from "@mui/material";
 import { SwipeableDrawer } from "@mui/material";
 import { IconButton } from "@mui/material";
+import { Button } from "./ui/button";
 
 const links = [
   { name: "home", path: "/" },
@@ -57,12 +58,15 @@ export default function MobileNav() {
                 className={`${
                   link.path === pathname &&
                   "text-accent border-b-2 border-accent"
-                } capitalize hover:text-accent text-sm transition-all duration-500 ease-in-out text-white underline-hover`}
+                } capitalize hover:text-accent transition-all duration-500 ease-in-out text-white underline-hover`}
               >
                 {link.name}
               </Link>
             );
           })}
+          <Link href={"#contact"}>
+            <Button>Hire me</Button>
+          </Link>
         </nav>
       </List>
     </Box>

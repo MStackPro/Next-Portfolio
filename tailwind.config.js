@@ -1,13 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
+  darkMode: ["class"], // Enable dark mode with a class
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
@@ -24,11 +23,17 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#1c1c22",
+        primary: "#222229",
         accent: {
           DEFAULT: "#00ff99",
-          hover: "00e187",
+          hover: "#00e187",
         },
+        // Light mode colors
+        lightBackground: "#EDECEC",
+        lightText: "#000000",
+        // Dark mode colors
+        darkBackground: "#121212",
+        darkText: "#ffffff",
       },
 
       keyframes: {

@@ -1,52 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-  
+
 @layer base {
-    body {
-        @apply font-primary bg-primary text-white leading-loose;
-    }
-    .h1 {
-        @apply text-[48px] xl:text-[80] leading-[1.1] font-semibold
-    }
-    .h2 {
-        @apply text-[36px] xl:text-[48] leading-[1] font-semibold
-    }
-    .h3 {
-        @apply text-[20px] xl:text-[24] leading-[1.1] font-semibold
-    }
-    .text-outline {
-        -webkit-text-stroke: 1px #ffffff;
-    }
-    .text-outline-hover {
-        -webkit-text-stroke: 1px #00ff99;
-    }
+  body {
+    @apply font-primary bg-primary text-white leading-loose;
+  }
+  .h1 {
+    @apply text-[48px] xl:text-[80] leading-[1.1] font-semibold;
+  }
+  .h2 {
+    @apply text-[36px] xl:text-[48] leading-[1] font-semibold;
+  }
+  .h3 {
+    @apply text-[20px] xl:text-[24] leading-[1.1] font-semibold;
+  }
+  .text-outline {
+    -webkit-text-stroke: 1px #ffffff;
+  }
+  .text-outline-hover {
+    -webkit-text-stroke: 1px #00ff99;
+  }
 }
 
 .scroll-top.visible {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .scroll-top:hover {
-    transform: scale(0.9);
-    box-shadow: 0 4px 12px var(--text-color);
-  }
-  
-  img.scroll-top {
-    width: 2rem;
-    height: 2rem;
-  }
-  .underline-hover {
-    @apply bg-no-repeat transition-all duration-300;
-    background-image: linear-gradient(
-        transparent 0%, transparent 90%, #00ff99 90%, #00ff99 100%
-    );
-    background-size:  0% 100%;
-    background-position-x: right;
-  }
-  .underline-hover:hover {
-    background-size:  100% 100%;
-    background-position-x: left;
-  }
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: scale(0.9);
+  box-shadow: 0 4px 12px var(--text-color);
+}
+
+img.scroll-top {
+  width: 2rem;
+  height: 2rem;
+}
+.underline-hover {
+  @apply bg-no-repeat transition-all duration-300;
+  background-image: linear-gradient(
+    transparent 0%,
+    transparent 90%,
+    #00ff99 90%,
+    #00ff99 100%
+  );
+  background-size: 0% 100%;
+  background-position-x: right;
+}
+.underline-hover:hover {
+  background-size: 100% 100%;
+  background-position-x: left;
+}

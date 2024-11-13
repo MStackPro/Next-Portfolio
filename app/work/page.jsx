@@ -13,7 +13,6 @@ import { fadeIn } from "@/components/motions/variants";
 
 const projects = [
   {
-    id: 1,
     num: "01",
     category: "frontend",
     title: " project",
@@ -23,7 +22,6 @@ const projects = [
     url: "https://zenith-agro.vercel.app/",
   },
   {
-    id: 2,
     num: "02",
     category: "frontend",
     title: " project",
@@ -33,7 +31,6 @@ const projects = [
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 3,
     num: "03",
     category: "Branding",
     title: " project",
@@ -43,48 +40,34 @@ const projects = [
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 4,
     num: "04",
     category: "frontend",
     title: " project",
     desc: "Kekepay a tricycle revenue payment app",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
+    stack: [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }],
     image: require("/app/assets/kekepay.png"),
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 5,
     num: "05",
     category: "Branding",
     title: " project",
     desc: "Brand identity designs for KVE Africa",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
-    image: require("/app/assets/kve21.PNG"),
+    image: require("/app/assets/KVE.png"),
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 6,
     num: "06",
     category: "Branding",
     title: " project",
     desc: "Kay's Thrift and beauty stores",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
-    image: require("/app/assets/k8.PNG"),
+    image: require("/app/assets/KT.png"),
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 7,
     num: "07",
-    category: "frontend",
-    title: " project",
-    desc: "Noko social media",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "JavaScript" }],
-    image: require("/app/assets/noko.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
-  },
-  {
-    id: 8,
-    num: "08",
     category: "Frontend",
     title: " project",
     desc: "Mstack Solutions",
@@ -99,13 +82,21 @@ const projects = [
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
   {
-    id: 9,
-    num: "09",
+    num: "08",
     category: "Web Design",
     title: " project",
     desc: "Sorix Energy",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/sorix-website.png"),
+    url: "https://manage-landing-page-gilt-five.vercel.app/",
+  },
+  {
+    num: "09",
+    category: "Branding",
+    title: " project",
+    desc: "Pankizz Clothings",
+    stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
+    image: require("/app/assets/pankizz.png"),
     url: "https://manage-landing-page-gilt-five.vercel.app/",
   },
 ];
@@ -158,10 +149,13 @@ const Work = () => {
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-sm text-accent ">
+                    <li
+                      key={index}
+                      className="text-sm text-accent bg-slate-800 py-1 px-2  rounded-md"
+                    >
                       {item.name}
                       {/* remove the last comma */}
-                      {index !== project.stack.length - 1 && ","}
+                      {/* {index !== project.stack.length - 1 && ","} */}
                     </li>
                   );
                 })}
@@ -178,29 +172,29 @@ const Work = () => {
             >
               {projects.map((project) => {
                 return (
-                  <SwiperSlide key={project.id}>
-                    <div className="h-[300px] w-full xl:h-[350px] relative group flex justify-center items-center rounded-lg overflow-hidden">
-                      <div className="relative w-full h-full group">
+                  <SwiperSlide key={project.num}>
+                    <div className="relative group flex flex-col justify-center items-center rounded-lg">
+                      <div className="rounded-lg h-80 block overflow-hidden group">
                         <Image
                           src={project.image}
                           alt="project"
-                          className="object-cover"
+                          className="object-cover transform transition-transform [transition-duration:1200ms] group-hover:-translate-y-[calc(100%-18rem)]"
                         />
-                        <Link
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        >
-                          <Button
-                            variant="link"
-                            size="sm"
-                            className="flex items-center gap-2"
-                          >
-                            Go live <GoArrowUpRight />
-                          </Button>
-                        </Link>
                       </div>
+                      <Link
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      >
+                        <Button
+                          variant="link"
+                          size="sm"
+                          className="flex items-center gap-2"
+                        >
+                          Go live <GoArrowUpRight />
+                        </Button>
+                      </Link>
                     </div>
                   </SwiperSlide>
                 );

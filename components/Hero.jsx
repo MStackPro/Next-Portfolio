@@ -29,7 +29,7 @@ export default function Hero() {
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="max-w-[500px] mb-9 text-white text-sm"
+              className="max-w-[500px] mb-9  text-sm"
             >
               A passionate skilled Front-end Developer and Creative Graphic
               Designer.
@@ -48,7 +48,7 @@ export default function Hero() {
                 size="sm"
                 className="uppercase text-sm flex items-center gap-2"
               >
-                <span>Download CV</span>
+                Download CV
                 <FiDownload className="text-xl" />
               </Button>
 

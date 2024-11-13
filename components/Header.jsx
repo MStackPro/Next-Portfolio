@@ -23,7 +23,7 @@ const Header = () => {
     window.addEventListener("scroll", navbarBgChange);
   });
   return (
-    <header className={`${navbarBg ? "bg-primary bg-opacity-95 shadow-m transition-all duration-500 ease-in-out" : "bg-transparent"} py-4 text-white h-20 fixed z-20 w-screen top-0`}>
+    <header className={`${navbarBg ? "bg-primary bg-opacity-95 shadow-m transition-all duration-500 ease-in-out" : "bg-transparent"} py-4 text-white h-20 fixed z-20 w-screen top-0 shadow-md`}>
       <div className="container mx-auto flex justify-between items-center">
         {/* ==== NAV LOGO ==== */}
         <div className="overflow-hidden rounded-full">
@@ -35,10 +35,10 @@ const Header = () => {
         {/* nav & hire me button */}
         <div className="hidden xl:flex items-center gap-8">
           <Navbar />
-          <Link href={"#contact"}>
-            <Button>Hire me</Button>
-          </Link>
         </div>
+        <Link href={"#contact"} className="hidden xl:block">
+            <Button>Hire me</Button>
+        </Link>
 
         {/* mobile nav */}
         <div className="xl:hidden">
