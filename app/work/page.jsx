@@ -37,7 +37,7 @@ const projects = [
     desc: "Mstack Solutions",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/mix-designs.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://www.behance.net/gallery/204359257/Brand-identity-design-for-Mstack-Solutions",
   },
   {
     num: "04",
@@ -55,7 +55,7 @@ const projects = [
     desc: "Brand identity designs for KVE Africa",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/KVE.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://www.behance.net/gallery/194842697/Brand-identity-designs-for-KVE-Africa",
   },
   {
     num: "06",
@@ -64,7 +64,7 @@ const projects = [
     desc: "Kay's Thrift and beauty stores",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/KT.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://www.behance.net/gallery/194113027/Kays-Thrift-and-beauty-stores",
   },
   {
     num: "07",
@@ -77,7 +77,7 @@ const projects = [
       { name: "Material ui" },
     ],
     image: require("/app/assets/Landing-page.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://mstack-solutions.vercel.app/",
   },
   {
     num: "08",
@@ -86,7 +86,7 @@ const projects = [
     desc: "Sorix Energy",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/sorix-website.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://www.behance.net/gallery/200070783/Sorix-Energy",
   },
   {
     num: "09",
@@ -95,7 +95,7 @@ const projects = [
     desc: "Pankizz Clothings",
     stack: [{ name: "Photoshop" }, { name: "Illustrator" }],
     image: require("/app/assets/pankizz.png"),
-    url: "https://manage-landing-page-gilt-five.vercel.app/",
+    url: "https://www.behance.net/gallery/211536429/Pankizz-clothing",
   },
 ];
 
