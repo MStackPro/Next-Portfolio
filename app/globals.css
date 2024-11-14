@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose;
+    @apply font-primary bg-primary transition-all duration-500 ease-in-out text-white leading-loose;
   }
   .h1 {
     @apply text-[48px] xl:text-[80] leading-[1.1] font-semibold;
