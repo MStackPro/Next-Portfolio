@@ -10,9 +10,9 @@ const Photo = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 1.1, duration: 0.2, ease: easeInOut },
+        transition: { delay: 1, duration: 0.2, ease: easeInOut },
       }}
-      className="w-[75%] overflow-hidden mx-auto rounded-2xl hover:transform hover:rotate-[10deg] transition-all duration-500"
+      className="w-[75%] overflow-hidden mx-auto rounded-full mix-blend-lighten hover:transform hover:rotate-[10deg] transition-all duration-500 ease-in-out hover:mix-blend-lighten"
     >
       <Image
         src={Me}

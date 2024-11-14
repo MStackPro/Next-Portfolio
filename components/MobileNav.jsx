@@ -41,9 +41,8 @@ export default function MobileNav() {
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
-      className="flex justify-center items-center flex-col gap-10"
     >
-      <IconButton onClick={toggleDrawer(false)} className="mr-40 mt-4">
+      <IconButton onClick={toggleDrawer(false)} className="mt-4">
         <IoIosArrowRoundBack className="text-4xl text-accent" />
       </IconButton>
 

@@ -6,6 +6,7 @@ import { Button } from './ui/button'
 import Socials from './Socials'
 import Photo from './Photo'
 import { FiDownload } from 'react-icons/fi'
+import Typewriter from 'typewriter-effect';
 
 export default function Hero() {
   return (
@@ -24,16 +25,15 @@ export default function Hero() {
               <span className="">Hello I'm</span>
               <h1 className="h2 text-accent">Manasseh Walshak</h1>
             </motion.div>
-            <motion.p
+            <motion.div
               variants={fadeIn("right", 0.1)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
               className="max-w-[500px] mb-9  text-sm"
             >
-              A passionate skilled Front-end Developer and Creative Graphic
-              Designer.
-            </motion.p>
+              <Typewriter options={{ strings: ["A passionate skilled Front-end Developer and Creative Graphic Designer."], autoStart: true, loop: true, delay: 40}}/>
+            </motion.div>
 
             {/* BUTTON AND SOCIALS */}
             <motion.div

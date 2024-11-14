@@ -36,7 +36,7 @@ const Services = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.7 }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-[30px]"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[30px]"
         >
           {/* Service container */}
           {services.map((service, index) => {

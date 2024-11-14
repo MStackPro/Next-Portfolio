@@ -23,7 +23,7 @@ const Header = () => {
     window.addEventListener("scroll", navbarBgChange);
   });
   return (
-    <header className={`${navbarBg ? "bg-primary bg-opacity-95 shadow-m transition-all duration-500 ease-in-out" : "bg-transparent"} py-4 text-white h-20 fixed z-20 w-screen top-0 shadow-md`}>
+    <header className={`${navbarBg ? "bg-primary bg-opacity-95 border-b border-accent/30 transition-all duration-500 ease-in-out" : "bg-transparent"} py-4 text-white h-20 fixed z-20 w-screen top-0`}>
       <div className="container mx-auto flex justify-between items-center">
         {/* ==== NAV LOGO ==== */}
         <div className="overflow-hidden rounded-full">

@@ -255,7 +255,7 @@ const Resume = () => {
             <TabsContent value="about" className="w-full text-left">
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-3xl font-bold">{about.title}</h3>
-                <p className="max-w-[600px] text-[14px] text-white mx-auto xl:mx-0">
+                <p className="text-[14px] text-white mx-auto xl:mx-0">
                   {about.desc}
                 </p>
                 <ul className="grid grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-3 max-w-[620px]">
