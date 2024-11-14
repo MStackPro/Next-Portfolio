@@ -43,7 +43,7 @@ const Services = () => {
             return (
               <div
                 key={index}
-                className="flex-1 flex-col justify-center gap-6 group space-y-4 bg-[#323237] p-6 rounded-xl"
+                className="flex-1 flex-col justify-center gap-6 group space-y-4 bg-[#323237] p-6 rounded-lg transform transition-transform duration-300 hover:scale-105"
               >
                 {/* NUM */}
                 <div className="xl:text-5xl text-4xl font-extrabold text-outline text-transparent group-hover:text-outline-hover transition-all duration-500">

@@ -18,7 +18,7 @@ const projects = [
     desc: "NYSC CDS Attendance Dashboard",
     stack: [{ name: "Next js" }, { name: "Tailwind"}, { name: "Material ui"},],
     image: require("/app/assets/CDS_Attendance_Landing_page.png"),
-    url: "https://cds-attendance-dashboard.vercel.app/",
+    url: "https://cds-attendance-system.onrender.com/overview",
   },
   {
     num: "02",
@@ -172,11 +172,11 @@ const Work = () => {
                 return (
                   <SwiperSlide key={project.num}>
                     <div className="relative group flex flex-col justify-center items-center rounded-lg">
-                      <div className="rounded-lg h-80 block overflow-hidden group">
+                      <div className="rounded-lg xl:h-80 h-[15rem] block overflow-hidden group">
                         <Image
                           src={project.image}
                           alt="project"
-                          className="object-cover transform transition-transform [transition-duration:1200ms] group-hover:-translate-y-[calc(100%-18rem)]"
+                          className="object-cover transform transition-transform [transition-duration:1200ms] xl:group-hover:-translate-y-[calc(100%-20rem)] group-hover:-translate-y-[calc(100%-15rem)]"
                         />
                       </div>
                       <Link

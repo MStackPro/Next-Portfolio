@@ -128,7 +128,7 @@ const Contact = () => {
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="">Send Message</Button>
+              <Button variant="" className="transform transition-transform duration-300 hover:scale-105">Send Message</Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="bg-[#323237] border-none w-[90%] xl:w-full rounded-lg">
               <AlertDialogHeader>
