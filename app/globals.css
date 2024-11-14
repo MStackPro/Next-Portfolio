@@ -22,22 +22,6 @@
     -webkit-text-stroke: 1px #00ff99;
   }
 }
-
-.scroll-top.visible {
-  transform: translateY(0);
-  opacity: 1;
-  visibility: visible;
-}
-
-.scroll-top:hover {
-  transform: scale(0.9);
-  box-shadow: 0 4px 12px var(--text-color);
-}
-
-img.scroll-top {
-  width: 2rem;
-  height: 2rem;
-}
 .underline-hover {
   @apply bg-no-repeat transition-all duration-300;
   background-image: linear-gradient(
@@ -52,4 +36,24 @@ img.scroll-top {
 .underline-hover:hover {
   background-size: 100% 100%;
   background-position-x: left;
+}
+.rotating-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid transparent;
+  border-top: 2px solid #00ff99;
+  border-bottom: 2px solid #00ff99;
+  animation: rotBorder 3s linear infinite;
+  transition: all 0.3s linear;
+}
+@keyframes rotBorder {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }

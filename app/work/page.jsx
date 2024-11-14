@@ -144,12 +144,12 @@ const Work = () => {
               <p className="text-white/60 text-sm">{project.desc}</p>
 
               {/* stack */}
-              <ul className="flex gap-4">
+              <ul className="flex gap-2">
                 {project.stack.map((item, index) => {
                   return (
                     <li
                       key={index}
-                      className="text-sm text-accent bg-slate-800 py-1 px-2  rounded-md"
+                      className="text-sm text-accent bg-slate-800 py-1 px-2 rounded-md"
                     >
                       {item.name}
                       {/* remove the last comma */}
@@ -197,7 +197,7 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
-              <WorkSliderBtns containerStyles="flex gap-4 justify-center mt-4" />
+              <WorkSliderBtns />
             </Swiper>
           </div>
         </div>

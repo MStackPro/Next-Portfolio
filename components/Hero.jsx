@@ -32,7 +32,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.7 }}
               className="max-w-[500px] mb-9  text-sm"
             >
-              <Typewriter options={{ strings: ["A passionate skilled Front-end Developer and Creative Graphic Designer."], autoStart: true, loop: true, delay: 40}}/>
+              <Typewriter options={{ strings: ["Front-end Developer and Creative Graphic Designer."], autoStart: true, loop: true, delay: 40}}/>
             </motion.div>
 
             {/* BUTTON AND SOCIALS */}
