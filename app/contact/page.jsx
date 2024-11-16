@@ -28,6 +28,7 @@ import {
 import toast, { Toaster } from "react-hot-toast";
 import { useState, useEffect } from "react";
 import { fadeIn } from "@/components/motions/variants";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,6 @@ const Contact = () => {
     setIsButtonDisabled(!allFieldsFilled);
   }, [formData]);
 
-  // Form input change handler
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -58,43 +58,34 @@ const Contact = () => {
     }));
   };
 
-  // Form submission handler
-  const handleSubmit = async (e) => {
+  // Form submission handler using EmailJS
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Create FormData and append each field
-    const form = new FormData();
-    form.append("firstname", formData.firstname);
-    form.append("lastname", formData.lastname);
-    form.append("email", formData.email);
-    form.append("phone", formData.phone);
-    form.append("service", formData.service);
-    form.append("message", formData.message);
-
-    try {
-      const response = await fetch("https://formspree.io/f/xvojedzq", {
-        method: "POST",
-        body: form, // Use FormData instead of JSON
-        headers: { Accept: "application/json" },
-      });
-
-      if (response.ok) {
-        toast.success("Message sent successfully!");
-        // Reset form fields after successful submission
-        setFormData({
-          firstname: "",
-          lastname: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: "",
-        });
-      } else {
-        throw new Error("Failed to send message");
-      }
-    } catch (error) {
-      toast.error("Failed to send message");
-    }
+    emailjs
+      .send(
+        "service_8p2sx2w", // Replace with your EmailJS Service ID
+        "template_awutohm", // Replace with your EmailJS Template ID
+        formData,
+        "6w40RJjYsVkFbFlQ5" // Replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          setFormData({
+            firstname: "",
+            lastname: "",
+            email: "",
+            phone: "",
+            service: "",
+            message: "",
+          });
+        },
+        (error) => {
+          console.error("Error:", error);
+          toast.error("Failed to send message.");
+        }
+      );
   };
 
   return (
@@ -128,7 +119,9 @@ const Contact = () => {
 
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="" className="transform transition-transform duration-300 hover:scale-105">Send Message</Button>
+              <Button variant="" className="transform transition-transform duration-300 hover:scale-105">
+                Send Message
+              </Button>
             </AlertDialogTrigger>
             <AlertDialogContent className="bg-[#323237] border-none w-[90%] xl:w-full rounded-lg">
               <AlertDialogHeader>
