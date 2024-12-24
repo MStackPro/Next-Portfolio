@@ -7,6 +7,7 @@ import Socials from './Socials'
 import Photo from './Photo'
 import { FiDownload } from 'react-icons/fi'
 import Typewriter from 'typewriter-effect';
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -43,6 +44,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.7 }}
               className="flex flex-col xl:flex-row items-center gap-8"
             >
+              <Link href={'/CV.pdf'} download>
               <Button
                 variant="outline"
                 size="sm"
@@ -51,6 +53,7 @@ export default function Hero() {
                 Download CV
                 <FiDownload className="text-xl" />
               </Button>
+              </Link>
 
               <div className="mb-8 xl:mb-0">
                 <Socials
