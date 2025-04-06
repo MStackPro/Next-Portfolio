@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .font-primary {
+    font-family: var(--font-ubuntu), sans-serif;
+  }
+}
+
+
 @layer base {
   body {
     @apply font-primary bg-primary transition-all duration-500 ease-in-out text-white leading-loose;
@@ -22,20 +29,72 @@
     -webkit-text-stroke: 1px #00ff99;
   }
 }
-.underline-hover {
-  @apply bg-no-repeat transition-all duration-300;
-  background-image: linear-gradient(
-    transparent 0%,
-    transparent 90%,
-    #00ff99 90%,
-    #00ff99 100%
-  );
-  background-size: 0% 100%;
-  background-position-x: right;
+@layer components {
+  .swiper-pagination-bullet {
+    @apply bg-gray-500 opacity-50;
+  }
+
+  .swiper-pagination-bullet-active {
+    @apply bg-red-500 opacity-100;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    @apply text-white hover:text-red-500;
+  }
+
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    @apply text-xl;
+  }
 }
-.underline-hover:hover {
-  background-size: 100% 100%;
-  background-position-x: left;
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+.hamburger-line {
+  @apply w-6 h-0.5 bg-current transition-all duration-300;
+}
+
+.hamburger-active .hamburger-line:nth-child(1) {
+  @apply rotate-45 translate-y-1.5;
+}
+
+.hamburger-active .hamburger-line:nth-child(2) {
+  @apply opacity-0;
+}
+
+.hamburger-active .hamburger-line:nth-child(3) {
+  @apply -rotate-45 -translate-y-1.5;
+}
+
+.project-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-500;
+}
+
+.project-card .project-content {
+  @apply static bg-[#19181f] p-6 mt-4;
+}
+
+.section-heading {
+  @apply text-4xl font-bold mb-8 relative inline-block;
+}
+
+.section-heading::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-1/2 h-1 bg-accent rounded-full;
+}
+
+.nav-link {
+  @apply relative font-medium;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-accent transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
 }
 .rotating-border {
   position: absolute;

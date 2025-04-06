@@ -19,7 +19,7 @@ module.exports = {
       xl: "1200px",
     },
     fontFamily: {
-      primary: "var(--font-Ubuntu_Mono)",
+      primary: ['var(--font-ubuntu)', 'sans-serif'],
     },
     extend: {
       colors: {

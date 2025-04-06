@@ -44,7 +44,7 @@ export default function Hero() {
               viewport={{ once: false, amount: 0.7 }}
               className="flex flex-col xl:flex-row items-center gap-8"
             >
-              <Link href={'/CV.pdf'} download>
+              <Link href={'/my_cv.pdf'} download>
               <Button
                 variant="outline"
                 size="sm"

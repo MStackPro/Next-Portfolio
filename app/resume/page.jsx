@@ -10,13 +10,13 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { SiTailwindcss, SiNextdotjs, SiAdobephotoshop, SiAdobeillustrator } from "react-icons/si";
+import { SiTypescript } from "react-icons/si";
 import {
   FaHtml5,
   FaCss3,
   FaJs,
   FaReact,
   FaFigma,
-  FaNodeJs,
 } from "react-icons/fa";
 import { fadeIn } from "@/components/motions/variants";
 
@@ -40,6 +40,16 @@ const experience = {
   title: "My experience",
   desc: "",
   items: [
+    {
+      company: "O'range Development consult",
+      position: "Junior QA Engineer",
+      duration: "April 2025 - Present",
+    },
+    {
+      company: "Belsoft Systems",
+      position: "Frontend Developer",
+      duration: "2024 - Present",
+    },
     {
       company: "Freelance",
       position: "Graphic Designer",
@@ -86,7 +96,7 @@ const education = {
       institution: "GLORIOUS CHILD ACADEMY, JOS NIGERIA",
       degree: "Primary School Leaving Certificate ",
       duration: "2004 - 2010",
-    },   
+    },
   ],
 };
 // Skills data
@@ -105,6 +115,10 @@ const skills = {
     {
       icon: <FaJs />,
       name: "javaScript",
+    },
+    {
+      icon: <SiTypescript />,
+      name: "Typescript",
     },
     {
       icon: <FaReact />,
@@ -140,7 +154,15 @@ const Resume = () => {
       id="resume"
     >
       <div className="container mx-auto pt-12">
-        <p className="text-accent text-[17px] font-semibold"> My Resume</p>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="section-heading"
+        >
+          Resume
+        </motion.h2>
         <Tabs
           defaultValue="about"
           className="flex flex-col xl:flex-row gap-[60px] mt-6"
@@ -153,15 +175,12 @@ const Resume = () => {
           </TabsList>
 
           {/* CONTENT */}
-          <motion.div variants={fadeIn("up", 0.1)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{once: false, amount: 0.7}} className="min-h-[70vh] w-full">
-            
+          <div>
+
             {/* experience */}
             <TabsContent value="experience" className="w-full">
-              <div className="flex flex-col gap-[30px] text-left">
-                <h3 className="text-3xl font-bold">{experience.title}</h3>
+              <div className="flex flex-col gap-6 text-left">
+                <h3 className="font-semibold text-accent capitalize">{experience.title}</h3>
 
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -190,8 +209,8 @@ const Resume = () => {
 
             {/* education */}
             <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-left">
-                <h3 className="text-3xl font-bold">{education.title}</h3>
+              <div className="flex flex-col gap-6 text-left">
+                <h3 className="font-semibold text-accent capitalize">{education.title}</h3>
 
                 <ScrollArea className="h-[400px]">
                   <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
@@ -221,21 +240,21 @@ const Resume = () => {
             {/* skills */}
             <TabsContent value="skills">
               <div className="flex flex-col gap-[30px]">
-                <div className="flex flex-col gap-[30px] text-left xl:text-left">
-                  <h3 className="text-3xl font-bold">{skills.title}</h3>
+                <div className="flex flex-col gap-6 text-left xl:text-left">
+                  <h3 className="font-semibold text-accent capitalize">{skills.title}</h3>
                   <p className="max-w-[600px] text-white/60 xl:mx-0 text-sm">
                     {skills.desc}
                   </p>
                 </div>
 
-                <ul className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 xl:gap-[20px] gap-y-8">
+                <ul className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-7 gap-4 mx-auto">
                   {skills.skillList.map((skill, index) => {
                     return (
                       <li key={index}>
                         <TooltipProvider delayDuration={100}>
                           <Tooltip>
                             <TooltipTrigger className="w-20 h-20 bg-[#232329] rounded-xl flex justify-center items-center">
-                              <div className="text-4xl hover:text-accent transition-all duration-300">
+                              <div className="text-3xl hover:text-accent transition-all duration-300">
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
@@ -253,8 +272,8 @@ const Resume = () => {
 
             {/* about */}
             <TabsContent value="about" className="w-full text-left">
-              <div className="flex flex-col gap-[30px]">
-                <h3 className="text-3xl font-bold">{about.title}</h3>
+              <div className="flex flex-col gap-6">
+                <h3 className="font-semibold text-accent capitalize">{about.title}</h3>
                 <p className="text-[14px] text-white mx-auto xl:mx-0">
                   {about.desc}
                 </p>
@@ -275,7 +294,7 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
-          </motion.div>
+          </div>
         </Tabs>
       </div>
     </section>

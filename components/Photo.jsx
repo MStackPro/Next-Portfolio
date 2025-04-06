@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Me from "../app/assets/me.jpg";
 import { easeInOut, motion } from "framer-motion";
 
 const Photo = () => {
@@ -15,9 +14,10 @@ const Photo = () => {
       className="overflow-hidden xl:w-[25rem] xl:h-[25rem] w-60 h-60 rounded-full relative border border-accent/30 mix-blend-lighten hover:transform hover:rotate-[10deg] transition-all duration-500 ease-in-out hover:mix-blend-lighten"
     >
       <Image
-        src={Me}
+        src={"/me.jpg"}
         alt="me"
         width={450}
+        height={450}
         quality={100}
       />
       <div className="rotating-border"></div>
