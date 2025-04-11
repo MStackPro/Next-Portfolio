@@ -19,6 +19,7 @@ const Photo = () => {
         width={450}
         height={450}
         quality={100}
+        priority
       />
       <div className="rotating-border"></div>
     </motion.section>

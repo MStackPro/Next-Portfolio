@@ -59,6 +59,7 @@ export default function Projects() {
                     width={500}
                     height={500}
                     quality={100}
+                    priority
                     className="w-full h-64 object-cover rounded-t-xl"
                   />
                   <div className="project-content">
