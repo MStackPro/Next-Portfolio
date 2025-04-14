@@ -10,6 +10,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function Projects() {
@@ -76,22 +77,14 @@ export default function Projects() {
                       ))}
                     </div>
                     <div className="flex gap-4">
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 hover:text-accent"
-                      >
-                        <GithubIcon size={20} /> GitHub
-                      </a>
-                      <a
-                        href={project.demo}
+                      <Link
+                        href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 hover:text-accent  "
                       >
                         <ExternalLinkIcon size={20} /> Live Demo
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </motion.div>
