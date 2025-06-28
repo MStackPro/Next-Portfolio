@@ -20,8 +20,8 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
-    "@react-three/drei": "^10.3.0",
-    "@react-three/fiber": "^9.1.2",
+    "@react-three/drei": "^9.88.6",
+    "@react-three/fiber": "^8.13.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "emailjs-com": "^3.2.0",
@@ -43,6 +43,9 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
+    "@types/react": "^19.1.8",
+    "@types/react-reconciler": "^0.32.0",
+    "@types/react-transition-group": "^4.4.12",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",

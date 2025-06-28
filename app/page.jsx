@@ -4,7 +4,6 @@ import Work from "./projects/page";
 import Contact from "./contact/page";
 import Hero from "@/components/Hero";
 
-// import Cv from "../app/assets/WalshakManassehCV.docx"
 const Home = () => {
   return (
     <section>
