@@ -5,10 +5,10 @@ import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-base ring-offset-white transition-colors transform transition-transform duration-300 hover:scale-105",  {
+  "inline-flex items-center justify-center whitespace-nowrap rounded-lg font-semibold text-base ring-offset-white transition-colors transform transition-transform duration-300 hover:scale-105",  {
     variants: {
       variant: {
-        default: "bg-accent text-primary hover:bg-accent/60",
+        default: "bg-accent text-white hover:bg-accent/60",
         primary: "bg-primary text-white",
         outline: "border border-accent bg-transparent text-accent hover:bg-accent hover:text-primary",
         link: "text-[#f1f1f1] underline-offset-4 underline-hover rounded-none dark:text-slate-50 transition duration-500 ease",

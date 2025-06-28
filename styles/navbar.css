@@ -1,0 +1,91 @@
+
+.navbar {
+  @apply fixed top-0 w-full z-50 transition-all duration-300;
+}
+.navbar.scrolled {
+  @apply shadow-md  bg-accent/30 backdrop-blur-sm transition-all duration-300;
+}
+.navbar.notScrolled {
+  @apply  bg-transparent;
+}
+.navbar_container {
+  @apply flex items-center justify-between h-16;
+}
+.nav_logo {
+  @apply font-bold md:text-2xl text-xl bg-gradient-to-r from-blue-950 via-[#d9ecff] to-accent bg-clip-text text-transparent;
+}
+.active {
+  @apply text-accent;
+}
+.inactive {
+  @apply transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all hover:after:w-full;
+}
+.desktop_navlinks {
+  @apply hidden md:block;
+}
+.desktop_navlinks .desktop_link {
+  @apply flex items-center space-x-8;
+}
+.desktop_navlinks .desktop_link a {
+  /* @apply text-sm; */
+}
+.desktop_btn {
+  @apply uppercase text-sm md:flex items-center gap-2 hidden
+}
+
+/* ======== Mobile ========= */
+
+.mobile_hamburger_section {
+  @apply md:hidden flex items-center h-16;
+}
+.mobile_hamburger_section button {
+  @apply inline-flex items-center justify-center p-2 rounded-md cursor-pointer;
+}
+.mobile_hamburger_section .burger_lines {
+  @apply relative w-6 h-5 flex items-center justify-center;
+}
+.burger_lines span:nth-child(1) {
+  @apply absolute h-0.5 bg-white transform transition-all duration-300 ease-in-out;
+}
+.burger_lines span:nth-child(1).open {
+  @apply w-6 rotate-45;
+}
+.burger_lines span:nth-child(1).close {
+  @apply w-6 -translate-y-1.5;
+}
+.burger_lines span:nth-child(2) {
+  @apply absolute h-0.5 w-6 bg-white transform transition-all duration-300 ease-in-out;
+}
+.burger_lines span:nth-child(2).open {
+  @apply opacity-0 translate-x-3;
+}
+.burger_lines span:nth-child(2).close {
+  @apply opacity-100;
+}
+.burger_lines span:nth-child(3) {
+  @apply absolute h-0.5 bg-white transform transition-all duration-300 ease-in-out;
+}
+.burger_lines span:nth-child(3).open {
+  @apply w-6 -rotate-45;
+}
+.burger_lines span:nth-child(3).close {
+  @apply w-6 translate-y-1.5;
+}
+.menu_overlay {
+  @apply fixed inset-0 top-16 bg-black/50 backdrop-blur-sm z-40 md:hidden;
+}
+.mobile_menu {
+  @apply flex flex-col justify-center h-full px-4
+}
+.mobile_menu.open {
+  @apply max-h-[400px] opacity-100;
+}
+.mobile_menu.close {
+  @apply max-h-0 opacity-0 overflow-hidden border-transparent;
+}
+.mobile_menu_contents {
+  @apply grid gap-5 py-14 w-fit mx-auto text-center;
+}
+.mobile_menu_contents a {
+  @apply block py-2 text-xl font-semibold px-4;
+}

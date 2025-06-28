@@ -1,9 +1,8 @@
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
-import PageTransition from "@/components/PageTransition";
 import Footer from "@/components/Footer";
 import ScrollUp from "@/components/ScrollUp";
-import Navbar from "@/components/Navbar";
+import { Navbar } from "@/components/Navbar";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -15,7 +14,7 @@ const ubuntu = Ubuntu({
 
 
 export const metadata = {
-  title: "Manasseh Walshak Yakubu",
+  title: "Manasseh Walshak",
   description: "My portfolio website",
 };
 
@@ -24,8 +23,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${ubuntu.variable} font-primary`}>
-        <Navbar />
-        <PageTransition>{children}</PageTransition>
+        <Navbar/>
+        <main>{children}</main>
         <Footer/>
         <ScrollUp/>
       </body>

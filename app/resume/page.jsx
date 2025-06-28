@@ -23,16 +23,7 @@ import { fadeIn } from "@/components/motions/variants";
 // About data
 const about = {
   title: "About me",
-  desc: "I'm a passionate, dedicated Front-end Developer and Creative Graphic Designer, with a strong work ethics and exceptional problem-solving abilities, I thrive in fast-paced environments. I'm highly adaptable, embracing change and always seeking new challenges to further develop my skills set. My combination of creativity, adaptability, and strong analytical skills makes me a valuable asset in front-end development, and a driving success in achieving goals.",
-  info: [
-    { fieldName: "Name", fieldValue: "Manasseh Walshak" },
-    { fieldName: "Phone", fieldValue: "(+234) 810 601 7834" },
-    { fieldName: "Experience", fieldValue: "3+ Years" },
-    { fieldName: "Nationality", fieldValue: "Nigerian" },
-    { fieldName: "Email", fieldValue: "walshakmanasseh@gmail.com" },
-    { fieldName: "Freelance", fieldValue: "Available" },
-    { fieldName: "Languages", fieldValue: "English, Hausa" },
-  ],
+  desc: "Am a Frontend Developer with a sharp eye for clean UI, seamless UX, and scalable architecture. I specialize in building modern, responsive web interfaces using React, TypeScript, Tailwind CSS, and Next.js no shortcuts, no fluff, just clean, performant code. I’m not just a coder, I think like a product owner. I focus on building user-centric experiences that align with business goals. I’ve collaborated closely with designers, backend engineers, and QA teams to bring full-featured dashboards, e-commerce platforms, and admin systems to life. If something breaks, I don’t wait around I dig in, debug, and deliver. Right now, I’m sharpening my backend chops with Node.js, and I’m no stranger to tools like Prisma, PostgreSQL, or Firebase. I’m also exploring mobile dev with React Native, and I’m involved in product testing and QA processes to ensure end-to-end quality. Whether you’re building a startup MVP, refining your SaaS UI, or need someone to bring structure and sanity to your frontend codebase I’m your guy. I don’t just execute tasks, I ask the right questions, challenge assumptions, and help you build smarter. Let’s build something people actually want to use.",
 };
 // Experience data
 const experience = {
@@ -56,11 +47,6 @@ const experience = {
       duration: "2022 - Present",
     },
     {
-      company: "Freelance",
-      position: "Front-end Developer",
-      duration: "2022 - Present",
-    },
-    {
       company: "Stems Multi-Global Engineering and Services Ltd. ",
       position: "Construction Intern",
       duration: "May 2021 - Sept. 2021",
@@ -81,21 +67,6 @@ const education = {
       institution: "UNIVERSITY OF JOS, JOS NIGERIA",
       degree: "Bsc. in Building",
       duration: "2016 - 2021",
-    },
-    {
-      institution: "Regalo Hope Foundation.",
-      degree: "Graphic Design training",
-      duration: "Sept. 2023 - Nov. 2023",
-    },
-    {
-      institution: "ST. JOHN’S COLLEGE, JOS NIGERIA",
-      degree: "SSCE",
-      duration: "2010 - 2016",
-    },
-    {
-      institution: "GLORIOUS CHILD ACADEMY, JOS NIGERIA",
-      degree: "Primary School Leaving Certificate ",
-      duration: "2004 - 2010",
     },
   ],
 };
@@ -274,24 +245,9 @@ const Resume = () => {
             <TabsContent value="about" className="w-full text-left">
               <div className="flex flex-col gap-6">
                 <h3 className="font-semibold text-accent capitalize">{about.title}</h3>
-                <p className="text-[14px] text-white mx-auto xl:mx-0">
+                <p className="text-[14px] lg:text-[15px] text-white mx-auto max-w-[49rem] w-full">
                   {about.desc}
                 </p>
-                <ul className="grid grid-cols-1 xl:grid-cols-2 gap-x-16 gap-y-3 max-w-[620px]">
-                  {about.info.map((item, index) => {
-                    return (
-                      <li
-                        key={index}
-                        className="flex items-center xl:justify-start gap-4"
-                      >
-                        <span className="text-white/60 text-sm">
-                          {item.fieldName}
-                        </span>
-                        <span className="text-sm">{item.fieldValue}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
               </div>
             </TabsContent>
           </div>

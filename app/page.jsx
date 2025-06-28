@@ -1,6 +1,5 @@
 import Stats from "@/components/Stats";
 import Resume from "./resume/page";
-import Services from "./services/page";
 import Work from "./projects/page";
 import Contact from "./contact/page";
 import Hero from "@/components/Hero";
@@ -8,7 +7,7 @@ import Hero from "@/components/Hero";
 // import Cv from "../app/assets/WalshakManassehCV.docx"
 const Home = () => {
   return (
-    <section className="pt-20">
+    <section>
       {/* HERO */}
       <Hero/>
 
@@ -18,7 +17,7 @@ const Home = () => {
       {/* Resume */}
       <Resume />
 
-      {/* Work */}
+      {/* Projects */}
       <Work />
 
       {/* Contact */}

@@ -8,10 +8,12 @@
   }
 }
 
-
 @layer base {
   body {
     @apply font-primary bg-primary transition-all duration-500 ease-in-out text-white leading-loose;
+  }
+  main {
+    @apply pt-16
   }
   .h1 {
     @apply text-[48px] xl:text-[80] leading-[1.1] font-semibold;
@@ -26,7 +28,7 @@
     -webkit-text-stroke: 1px #ffffff;
   }
   .text-outline-hover {
-    -webkit-text-stroke: 1px #00ff99;
+    -webkit-text-stroke: 1px #52aeff;
   }
 }
 @layer components {
@@ -46,7 +48,17 @@
   .swiper-button-next::after {
     @apply text-xl;
   }
+  .hero-text {
+    @apply flex flex-col justify-center md:text-[45px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    img {
+      @apply size-8 md:size-10 object-contain;
+    }
+    .slide {
+      @apply absolute pt-0 px-2 md:px-5 py-[30px] h-[48px] md:h-[78px] md:translate-y-1 translate-y-0 overflow-hidden;
+    }
+  }
 }
+
 
 .container {
   @apply max-w-7xl mx-auto;
@@ -103,8 +115,8 @@
   width: 100%;
   height: 100%;
   border: 4px solid transparent;
-  border-top: 2px solid #00ff99;
-  border-bottom: 2px solid #00ff99;
+  border-top: 2px solid #52aeff;
+  border-bottom: 2px solid #52aeff;
   animation: rotBorder 3s linear infinite;
   transition: all 0.5s linear;
 }
@@ -116,3 +128,47 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+/* Hero text slider starts */
+.slide {
+  display: inline-block;
+  flex-direction: column;
+  transition: all cubic-bezier(0.71, 0.03, 0.34, 1);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  animation: wordSlider 21s infinite cubic-bezier(0.9, 0.01, 0.3, 0.99);
+}
+
+@keyframes wordSlider {
+  0% {
+    transform: translateY(0.5%);
+  }
+  12.5% {
+    transform: translateY(-12.5%);
+  }
+  25% {
+    transform: translateY(-25%);
+  }
+  37.5% {
+    transform: translateY(-37.5%);
+  }
+  50% {
+    transform: translateY(-50%);
+  }
+  62.5% {
+    transform: translateY(-62.5%);
+  }
+  75% {
+    transform: translateY(-75%);
+  }
+  87.5% {
+    transform: translateY(-87.5%);
+  }
+}
+
+/* Hero Text slider ends */

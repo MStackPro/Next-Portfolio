@@ -1,103 +1,209 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { usePathname } from 'next/navigation';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import "@/styles/navbar.css";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Button } from "./ui/button";
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [navbarBg, setNavbarBg] = useState(false);
+export function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const [scrolled, setScrolled] = useState(false);
 
-  const navbarBgChange = () => {
-    if (window.scrollY >= 80) {
-      setNavbarBg(true);
-    } else {
-      setNavbarBg(false);
-    }
-  };
-
+  // Handle scroll effect for navbar
   useEffect(() => {
-    navbarBgChange();
-    window.addEventListener("scroll", navbarBgChange);
-    return () => window.removeEventListener("scroll", navbarBgChange);
-  }, []);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest(".mobile-menu") && !event.target.closest(".menu-button")) {
-        setIsOpen(false);
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
     };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [isOpen]);
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Disable body scroll when mobile menu is open
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.body.style.overflow = "auto";
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  // Menu animation variants
+  const menuVariants = {
+    closed: {
+      opacity: 0,
+      height: 0,
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+        when: "afterChildren",
+        staggerChildren: 0.05,
+        staggerDirection: -1,
+      },
+    },
+    open: {
+      opacity: 1,
+      height: "auto",
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+        when: "beforeChildren",
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const linkVariants = {
+    closed: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.2 },
+    },
+    open: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3 },
+    },
+  };
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${navbarBg ? "bg-primary bg-opacity-95 border-b border-accent/30" : "bg-transparent"}`}>
-      <div className="container">
-        <div className="flex items-center justify-between h-16">
-          <a href="/" className="text-2xl font-bold">Portfolio</a>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {[
-              { href: "#resume", label: "Resume" },
-              { href: "#projects", label: "Projects" },
-              { href: "#contact", label: "Contact" },
-            ].map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className={`nav-link ${pathname === link.href ? "text-accent" : ""}`}
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
+    <header>
+      <div className={`navbar ${scrolled ? "scrolled" : "notScrolled"}`}>
+        <div className="container">
+          <div className="navbar_container">
+            <Link href="/" className="nav_logo">
+              Walshak
+            </Link>
 
-          {/* Mobile Navigation Button */}
-          <button
-            className={`md:hidden flex flex-col space-y-1.5 menu-button ${isOpen ? 'hamburger-active' : ''}`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-            <span className="hamburger-line"></span>
-          </button>
-        </div>
-
-        {/* Mobile Navigation Menu */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mobile-menu bg-primary"
-            >
-              <div className="px-2 pt-2 pb-3 space-y-1">
+            <div className="desktop_navlinks">
+              <div className="desktop_link">
                 {[
                   { href: "#resume", label: "Resume" },
                   { href: "#projects", label: "Projects" },
                   { href: "#contact", label: "Contact" },
                 ].map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium hover:bg-accent hover:text-black transition-all duration-500 ease-in-out ${pathname === link.href ? "text-accent" : ""}`}
-                    onClick={() => setIsOpen(false)}
+                    className={`${pathname === link.href ? "active" : "inactive"
+                      }`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <Link href={"#contact"}>
+              <Button
+                size="sm"
+                className="desktop_btn"
+              >
+                Contact Me
+              </Button>
+            </Link>
+
+            {/* Mobile Menu Button */}
+            <div className="mobile_hamburger_section">
+              <button
+                id="menu-button"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-expanded={isMenuOpen}
+              // onClick={toggleMenu}
+              >
+                <span className="sr-only">Open main menu</span>
+                <div className="burger_lines">
+                  <span
+                    className={`
+                      ${isMenuOpen ? "open" : "close"}
+                    `}
+                  />
+                  <span
+                    className={`
+                      ${isMenuOpen ? "open" : "close"}
+                    `}
+                  />
+                  <span
+                    className={`
+                      ${isMenuOpen ? "open" : "close"}
+                    `}
+                  />
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="menu_overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              className="mobile_menu"
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+            >
+              <div className="mobile_menu_contents">
+                {[
+                  { href: "#resume", label: "Resume" },
+                  { href: "#projects", label: "Projects" },
+                  { href: "#contact", label: "Contact" },
+                ].map((link, index) => (
+                  <motion.div
+                    key={link.label}
+                    variants={linkVariants}
+                    custom={index}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={` ${pathname === link.href ? "active" : "inactive"
+                        }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 }

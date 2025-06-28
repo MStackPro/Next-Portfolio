@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { GithubIcon, ExternalLinkIcon, MailIcon, LinkedinIcon } from 'lucide-react';
+import { ExternalLinkIcon, } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { projects } from '@/lib/data';
@@ -43,7 +43,7 @@ export default function Projects() {
             pagination={true}
             navigation={true}
             modules={[EffectCoverflow, Pagination, Navigation]}
-            className="w-full"
+            className="w-full blue-pagination"
           >
             {projects.map((project, index) => (
               <SwiperSlide key={index} className="max-w-lg">
@@ -93,6 +93,29 @@ export default function Projects() {
           </Swiper>
         </div>
       </section>
+      
+      {/* Custom styles for blue pagination and navigation */}
+      <style jsx>{`
+        :global(.blue-pagination .swiper-pagination-bullet) {
+          background-color: #1A3349FF !important;
+          opacity: 0.7;
+        }
+        
+        :global(.blue-pagination .swiper-pagination-bullet-active) {
+          background-color: #52aeff !important;
+          opacity: 1;
+        }
+        
+        :global(.blue-pagination .swiper-button-next),
+        :global(.blue-pagination .swiper-button-prev) {
+          color: #52aeff !important;
+        }
+        
+        :global(.blue-pagination .swiper-button-next:hover),
+        :global(.blue-pagination .swiper-button-prev:hover) {
+          color: #52aeff !important;
+        }
+      `}</style>
     </div>
   )
 }

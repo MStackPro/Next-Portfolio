@@ -1,69 +1,63 @@
 "use client"
-import { motion } from 'framer-motion'
 import React from 'react'
-import { fadeIn } from './motions/variants'
 import { Button } from './ui/button'
-import Socials from './Socials'
 import Photo from './Photo'
-import { FiDownload } from 'react-icons/fi'
-import Typewriter from 'typewriter-effect';
 import Link from 'next/link'
+import { words } from '@/lib/data'
+import Image from 'next/image'
 
 export default function Hero() {
+
   return (
-    <div className="container mx-auto h-full">
+    <div className="relative overflow-hidden">
+      <div className="absolute top-0 left-0 z-10">
+        <Image src="/bg.png" alt="" width={400} height={400} priority />
+      </div>
+      <div className="container">
+
         {/* HERO */}
-        <div className="flex flex-col xl:flex-row items-center justify-between mt-12 xl:mt-12 xl:pb-12">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:mt-12 xl:pb-12">
           {/* TEXT */}
-          <div className="text-center xl:text-left">
-            <motion.div
-              variants={fadeIn("down", 0.1)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className="mb-2"
-            >
-              <span className="">Hello I'm</span>
-              <h1 className="h2 text-accent">Manasseh Walshak</h1>
-            </motion.div>
-            <motion.div
-              variants={fadeIn("right", 0.1)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className="max-w-[500px] mb-9  text-sm"
-            >
-              <Typewriter options={{ strings: ["Front-end Developer and Creative Graphic Designer."], autoStart: true, loop: true, delay: 40}}/>
-            </motion.div>
+          <div className="flex flex-col gap-7">
+            <div className="hero-text">
+              <h1>
+                Shaping
+                <span className="slide">
+                  <span className="wrapper">
+                    {words.map((word, index) => (
+                      <span
+                        key={index}
+                        className="flex items-center md:gap-3 gap-1 pb-2"
+                      >
+                        <Image
+                          src={word.imgPath}
+                          alt="person"
+                          width={100}
+                          height={100}
+                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-accent"
+                        />
+                        <span>{word.text}</span>
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </h1>
+              <h1>into Real Projects</h1>
+              <h1>that Deliver Results</h1>
+            </div>
 
-            {/* BUTTON AND SOCIALS */}
-            <motion.div
-              variants={fadeIn("up", 0.1)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }}
-              className="flex flex-col xl:flex-row items-center gap-8"
-            >
-              <Link href={'/my_cv.pdf'} download>
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Hi, I’m Manasseh, a Developer & Brand Designer.
+            </p>
+
+            <Link href={"#projects"} className='mb-6 lg:mb-0'>
               <Button
-                variant="outline"
-                size="sm"
-                className="uppercase text-sm flex items-center gap-2"
+                size="lg"
+                className="w-full"
               >
-                Download CV
-                <FiDownload className="text-xl" />
+                See Projects
               </Button>
-              </Link>
-
-              <div className="mb-8 xl:mb-0">
-                <Socials
-                  containerStyles={"flex gap-6"}
-                  iconStyles={
-                    "w-9 h-9 border border-accent rounded-full flex items-center justify-center text-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
-                  }
-                />
-              </div>
-            </motion.div>
+            </Link>
           </div>
 
           {/* PHOTO */}
@@ -72,5 +66,6 @@ export default function Hero() {
           </div>
         </div>
       </div>
+    </div>
   )
 }
